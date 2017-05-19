@@ -111,7 +111,7 @@ dataForController_t getControllerData(void)
     }
 
     // home button key combo
-    if(ps2x.Button(PSB_START) && ps2x.ButtonPressed(PSB_R1) && ps2x.Analog(PSS_LY) > myLimit) {
+    if(ps2x.Button(PSB_START) && ps2x.Button(PSB_R1) && ps2x.Analog(PSS_LY) > myLimit) {
         myStart = false;
         myR1 = false;
         myL1 = false;
@@ -174,7 +174,7 @@ dataForController_t getControllerData(void)
     controllerData.squareOn = myCircle; //mySquare; //ps2x.Button(PSB_SQUARE);
     controllerData.crossOn = myTriangle; //myCross; //ps2x.Button(PSB_CROSS);
 
-    // directional pad behaves differently in-game (Wipout HD/Fury)
+    // directional pad behaves differently in-game (Wipeout HD/Fury)
     if(!myWipeoutPad) {
         controllerData.dpadUpOn = myPadUp;
         controllerData.dpadDownOn = ps2x.Button(PSB_PAD_DOWN);
